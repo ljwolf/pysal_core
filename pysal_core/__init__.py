@@ -36,5 +36,3 @@ from io import IOHandlers
 open = io.FileIO.FileIO
 
 from version import version
-
-MISSINGVALUE = None  # used by fileIO to flag missing values.

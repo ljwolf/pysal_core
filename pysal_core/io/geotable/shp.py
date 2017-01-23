@@ -1,5 +1,4 @@
 import pandas as pd
-import pysal as ps
 
 def shp2series(filepath):
     """

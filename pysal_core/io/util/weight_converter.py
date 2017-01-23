@@ -1,4 +1,5 @@
 import os
+from ..FileIO import FileIO as psopen
 import pysal
 
 __author__ = "Myunghwa Hwang <mhwang4@gmail.com>"
@@ -53,9 +54,9 @@ class WeightConverter(object):
         """
         try:
             if self.inputDataFormat:
-                f = pysal.open(self.inputPath, 'r', self.inputDataFormat)
+                f = psopen(self.inputPath, 'r', self.inputDataFormat)
             else:
-                f = pysal.open(self.inputPath, 'r')
+                f = psopen(self.inputPath, 'r')
         except:
             raise IOError('A problem occurred while reading the input file.')
         else:
@@ -147,9 +148,9 @@ class WeightConverter(object):
 
         try:
             if dataFormat:
-                o = pysal.open(outputPath, 'w', dataFormat)
+                o = psopen(outputPath, 'w', dataFormat)
             else:
-                o = pysal.open(outputPath, 'w')
+                o = psopen(outputPath, 'w')
         except:
             raise IOError('A problem occurred while creating the output file.')
         else:

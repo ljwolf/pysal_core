@@ -32,6 +32,8 @@ try:
     from patsy import PatsyError
 except ImportError:
     PatsyError = Exception
+MISSINGVALUE = None
+
 
 #################
 # Compatibility #

@@ -1,16 +1,19 @@
 import pysal as ps
+from ...common import pandas 
+from ..FileIO import FileIO as ps_open
+
 import numpy as np
 import unittest as ut
 
-PANDAS_EXTINCT = ps.common.pandas is None
+PANDAS_EXTINCT = pandas is None
 
 class Test_Table(ut.TestCase):
     def setUp(self):
-        self.filehandler = ps.open(ps.examples.get_path('columbus.dbf'))
+        self.filehandler = ps_open(ps.examples.get_path('columbus.dbf'))
         self.df = self.filehandler.to_df()
         self.filehandler.seek(0)
-        self.shapefile = ps.open(ps.examples.get_path('columbus.shp'))
-        self.csvhandler = ps.open(ps.examples.get_path('usjoin.csv'))
+        self.shapefile = ps_open(ps.examples.get_path('columbus.shp'))
+        self.csvhandler = ps_open(ps.examples.get_path('usjoin.csv'))
         self.csv_df = self.csvhandler.to_df()
         self.csvhandler.seek(0)
     

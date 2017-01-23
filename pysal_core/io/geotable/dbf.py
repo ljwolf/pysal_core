@@ -3,7 +3,6 @@
 """
 
 import numpy as np
-import pysal as ps
 import pandas as pd
 
 def check_dups(li):
